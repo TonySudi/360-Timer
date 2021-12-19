@@ -16,3 +16,47 @@ bin-release/
 # Project files, i.e. `.project`, `.actionScriptProperties` and `.flexProperties`
 # should NOT be excluded as they contain compiler settings and other important
 # information for Eclipse / Flash Builder.
+def countdown(n):
+    N=int(n)
+    if N <= 0:
+          print('Processing')
+    else:
+          print(N-1)
+          countdown(N-1)
+
+
+def countup(n):
+    N=int(n)
+    if N >=0:
+        print('Processing...')
+    else:
+        print(N)
+        countup(N+1)
+
+
+def timercountdowncheck():
+    n=input("Enter Your Timer Duration <=15:\n")
+    N=int(n)
+    if N==0 or N>15 or N<-15:
+        print("Enter a value more or less than that. ")
+    elif N>0:
+        #counting the positive number.
+     countdown(n)
+    else:
+        countup(n)
+
+def auto_switcher(n):
+    bulb = ("Turned")
+    print('Switching', 'ON')
+    if n==0:
+        print(n,"Switching", 'OFF')
+        return 1
+        
+    else:
+        recurse = auto_switcher(n-2)
+        result =n* recurse
+        print("Switching", result, "", "OFF")
+        return result
+
+auto_switcher(timercountdowncheck())
+
